@@ -47,6 +47,19 @@ header {
     @include position(absolute, 0px 0px 0 0);
     text-align: right;
 
+    h2 {
+      margin: 0;
+      font-size: 30px;
+      line-height: 30px;
+      text-transform: uppercase;
+      color: $med;
+    }
+    p {
+      margin: 0;
+      font-size: 30px;
+      line-height: 30px;
+      color: $med;
+    }
     a {
       font: {
         size: 15px;

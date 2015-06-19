@@ -9,3 +9,5 @@ gem "middleman-gh-pages"
 
 gem "coffee-script"
 gem "slim"
+
+gem "therubyracer"

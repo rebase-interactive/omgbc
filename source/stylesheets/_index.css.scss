@@ -113,35 +113,37 @@ section.content {
     @include position(absolute, 0px 0 0 0px);
     z-index: 0;
     @include size(100% 100%);
-    @include retina-image('/images/entrance', nil, 'jpg');
-    background: {
-      position: center center;
-      size: cover;
-    }
+    // @include retina-image('/images/entrance', nil, 'jpg');
+    // background: {
+    //   position: center center;
+    //   size: cover;
+    // }
+    background: $dark;
 
     @media #{$mobile-breakpoint} {
-      position: relative;
-      height: auto;
-      width: 100%;
-      padding-bottom: 80%;
+      // position: relative;
+      // height: auto;
+      // width: 100%;
+      // padding-bottom: 80%;
+      display: none;
     }
   }
-  &.promotions {
-    .contents {
-      margin-right: 0;
-      margin-left: 60%;
-
-      @media #{$tablet-breakpoint} {
-        margin-left: 50%;
-      }
-      @media #{$mobile-breakpoint} {
-        margin: 0 0 20px 0;
-      }
-    }
-    .image {
-      @include retina-image('/images/tiger', nil, 'jpg');
-    }
-  }
+  // &.promotions {
+  //   .contents {
+  //     margin-right: 0;
+  //     margin-left: 60%;
+  //
+  //     @media #{$tablet-breakpoint} {
+  //       margin-left: 50%;
+  //     }
+  //     @media #{$mobile-breakpoint} {
+  //       margin: 0 0 20px 0;
+  //     }
+  //   }
+  //   .image {
+  //     @include retina-image('/images/tiger', nil, 'jpg');
+  //   }
+  // }
   &.birthdays {
     .image {
       @include retina-image('/images/cages', nil, 'jpg');

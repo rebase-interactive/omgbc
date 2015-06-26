@@ -13,7 +13,7 @@ $ ->
   hours_url = "https://www.googleapis.com/calendar/v3/calendars/9d2ggm1k0j15m81h2pnq9ib9n4@group.calendar.google.com/events"
   $.get hours_url,
     alt: "json"
-    key: "AIzaSyCYFGl_MCQq7TyZ3xXJvCcxHJSwleulLUk"
+    key: "AIzaSyCwcbEWPU4nXaSHDMDKLYW7Ol1uQasw4Xo"
     timeMin: moment().toISOString()
     maxResults: 7
     orderBy: "startTime"
@@ -32,6 +32,7 @@ $ ->
           day_hours = "#{day_open}-#{day_close}"
         html_output += "<tr><th>#{day_date}</th><td>#{day_hours}</td></tr>"
     else
-      html_output += "<tr><td>Closed for the season. We'll be back in the Spring!</td></tr>"
+      html_output += "<tr><td>Opening soon - check back here for hours!</td></tr>"
+      # html_output += "<tr><td>Closed for the season. We'll be back in the Spring!</td></tr>"
 
     $("table#hours").html html_output

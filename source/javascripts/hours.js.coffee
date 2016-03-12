@@ -23,7 +23,7 @@ $ ->
 
     if data.items.length
       _.each data.items, (day) ->
-        day_date = formatDate day.start.dateTime
+        day_date = formatDate day.start.dateTime || day.start.date
         if day.summary == "Closed"
           day_hours = "Closed"
         else
@@ -32,7 +32,6 @@ $ ->
           day_hours = "#{day_open}-#{day_close}"
         html_output += "<tr><th>#{day_date}</th><td>#{day_hours}</td></tr>"
     else
-      html_output += "<tr><td>Opening soon - check back here for hours!</td></tr>"
-      # html_output += "<tr><td>Closed for the season. We'll be back in the Spring!</td></tr>"
+      html_output += "<tr><td>Closed for the season. We'll be back in the Spring!</td></tr>"
 
     $("table#hours").html html_output

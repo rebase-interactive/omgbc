@@ -128,22 +128,23 @@ section.content {
       display: none;
     }
   }
-  // &.promotions {
-  //   .contents {
-  //     margin-right: 0;
-  //     margin-left: 60%;
-  //
-  //     @media #{$tablet-breakpoint} {
-  //       margin-left: 50%;
-  //     }
-  //     @media #{$mobile-breakpoint} {
-  //       margin: 0 0 20px 0;
-  //     }
-  //   }
-  //   .image {
-  //     @include retina-image('/images/tiger', nil, 'jpg');
-  //   }
-  // }
+  &.promotions {
+    .contents {
+      margin-right: 0;
+      margin-left: 60%;
+
+      @media #{$tablet-breakpoint} {
+        margin-left: 50%;
+      }
+      @media #{$mobile-breakpoint} {
+        margin: 0 0 20px 0;
+      }
+    }
+    .image {
+      // @include retina-image('/images/tiger', nil, 'jpg');
+      background: $alt;
+    }
+  }
   &.birthdays {
     .image {
       @include retina-image('/images/cages', nil, 'jpg');

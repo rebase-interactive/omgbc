@@ -4,9 +4,9 @@ source 'https://rubygems.org'
 
 gem "middleman", "3.4.0"
 
-gem "middleman-dotenv"
+gem "middleman-dotenv", "1.1.1"
 gem "middleman-livereload", "3.4.6"
-gem "middleman-gh-pages"
+gem "middleman-sync", "3.0.12"
 
 gem "coffee-script"
 gem "slim"

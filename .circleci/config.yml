@@ -1,0 +1,61 @@
+defaults: &defaults
+  parallelism: 1
+  working_directory: ~/omgbc
+  docker:
+    - image: circleci/ruby:2.6.1
+      environment:
+        BUNDLE_JOBS: 3
+        BUNDLE_RETRY: 3
+        BUNDLE_PATH: vendor/bundle
+
+version: 2
+jobs:
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      - run:
+          name: Which Bundler?
+          command: bundle -v
+      - restore_cache:
+          keys:
+            - v1-bundle-cache-{{ checksum "Gemfile.lock" }}
+            - v1-bundle-cache-
+      - run:
+          name: Bundle Install
+          command: bundle check || bundle install
+      - save_cache:
+          key: v1-bundle-cache-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+      - run:
+          name: Build
+          command: bundle exec middleman build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+  deploy:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: Deploy
+          command: bundle exec middleman sync
+      - run:
+          name: Invalidate
+          command: bundle exec middleman invalidate
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master

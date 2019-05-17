@@ -14,7 +14,7 @@ section#banner {
   .image {
     position: absolute;
     @include size(100% 100%);
-    @include retina-image('/images/banner', nil, 'jpg');
+    @include retina-image('/images/banner2', nil, 'jpg');
     background: {
       position: center center;
       repeat: no-repeat;
@@ -141,7 +141,7 @@ section.content {
   }
   &.cages {
     .image {
-      @include retina-image('/images/cages', nil, 'jpg');
+      @include retina-image('/images/cages2', nil, 'jpg');
     }
   }
   &.social {

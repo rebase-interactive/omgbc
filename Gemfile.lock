@@ -47,7 +47,7 @@ GEM
     eventmachine (1.2.5)
     excon (0.62.0)
     execjs (2.7.0)
-    ffi (1.9.23)
+    ffi (1.13.1)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
     fog (1.42.0)

@@ -215,7 +215,7 @@ GEM
     i18n (0.7.0)
     inflecto (0.0.2)
     ipaddress (0.8.3)
-    json (2.1.0)
+    json (2.3.1)
     kramdown (1.16.2)
     libv8 (3.16.14.19)
     listen (3.0.8)
